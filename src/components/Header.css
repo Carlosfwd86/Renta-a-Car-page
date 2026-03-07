@@ -78,7 +78,8 @@
     gap: 20px;
 }
 
-.header-buttons button {
+.header-buttons button,
+.header-buttons a {
     padding: 16px 32px;
     border-radius: 30px;
     /* Bordes totalmente redondeados (pill shape) */
@@ -87,16 +88,21 @@
     font-family: 'Inter', sans-serif;
     cursor: pointer;
     border: none;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-.header-buttons button:hover {
+.header-buttons button:hover,
+.header-buttons a:hover {
     transform: translateY(-3px);
     /* Pequeño salto al pasar el ratón */
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-.header-buttons button:active {
+.header-buttons button:active,
+.header-buttons a:active {
     transform: translateY(0);
 }
 

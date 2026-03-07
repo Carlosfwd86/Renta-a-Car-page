@@ -54,6 +54,340 @@
     flex-grow: 1;
 }
 
+/* FILTER BAR */
+.filter-bar-container {
+    width: 100%;
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 15px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.filter-bar {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.filter-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.filter-tipo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.yellow-indicator {
+    width: 6px;
+    height: 22px;
+    background-color: #d1df12;
+    /* Color similar al de la imagen */
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.filter-label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.filter-pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-pill {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    color: #444;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.filter-pill:hover {
+    background-color: #ffffff;
+    border-color: #999;
+    color: #111;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter-pasajeros {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-select {
+    border: none;
+    background: transparent;
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    padding-right: 5px;
+}
+
+.search-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 10px 40px 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    outline: none;
+    width: 250px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #fff;
+    color: #333;
+}
+
+.search-input:focus {
+    border-color: #10b981;
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+.search-input::placeholder {
+    color: #9bd2bd;
+    /* Tono aqua/verde claro del placeholder en la imagen */
+    font-weight: 500;
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    color: #10b981;
+    /* Verde esmeralda similar a la imagen */
+    font-size: 1.1rem;
+    pointer-events: none;
+}
+
+@media (max-width: 1100px) {
+    .filter-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter-right {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+}
+
+/* CARRUSEL SECTION */
+.carrusel-section {
+    padding: 60px 40px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.carrusel-header {
+    margin-bottom: 30px;
+}
+
+.carrusel-header h2 {
+    color: hsl(209, 69%, 10%);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.carrusel-header p {
+    color: #64748b;
+    font-size: 1.05rem;
+}
+
+.carrusel-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 24px;
+    padding-bottom: 30px;
+    /* Comportamiento scroll suave tipo carrusel móvil */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* Ocultar scrollbar en navegadores para look más limpio */
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+.carrusel-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carrusel-container::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 10px;
+}
+
+.carrusel-card {
+    min-width: 320px;
+    max-width: 320px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    flex-shrink: 0;
+    /* Evita que las tarjetas se encojan en la fila */
+    scroll-snap-align: start;
+    border: 1px solid #f1f5f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.carrusel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.carrusel-img-wrapper {
+    width: 100%;
+    height: 180px;
+    position: relative;
+    background-color: #f8fafc;
+}
+
+.carrusel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carrusel-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #94a3b8;
+    background-color: #f1f5f9;
+}
+
+.placeholder-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    opacity: 0.5;
+}
+
+.carrusel-price-badge {
+    position: absolute;
+    bottom: -15px;
+    right: 20px;
+    background-color: hsl(209, 69%, 10%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(14, 25, 37, 0.3);
+}
+
+.carrusel-price-badge span {
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.carrusel-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.carrusel-header-info {
+    margin-bottom: 20px;
+}
+
+.carrusel-header-info h3 {
+    margin: 0 0 8px 0;
+    color: #0f172a;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+}
+
+.carrusel-header-info h3 span {
+    font-weight: 400;
+    color: #64748b;
+    font-size: 1rem;
+    margin-top: 2px;
+}
+
+.categoria-badge {
+    display: inline-block;
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.carrusel-features {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.carrusel-btn {
+    margin-top: auto;
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    border: 2px solid hsl(209, 69%, 10%);
+    color: hsl(209, 69%, 10%);
+    border-radius: 8px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.carrusel-btn:hover {
+    background-color: hsl(209, 69%, 10%);
+    color: white;
+}
+
 .section-title {
     text-align: center;
     font-size: 2.2rem;

@@ -14,6 +14,7 @@ function NavBar() {
                     <li><NavLink to="/vehiculos" className="navbar-link">Vehículos</NavLink></li>
                     <li><NavLink to="/nosotros" className="navbar-link">Nosotros</NavLink></li>
                     <li><NavLink to="/contacto" className="navbar-link">Contacto</NavLink></li>
+                    <li><NavLink to="/admin" className="navbar-link" style={{ color: '#ffb703', fontWeight: 'bold' }}>Admin</NavLink></li>
                 </ul>
             </div>
 

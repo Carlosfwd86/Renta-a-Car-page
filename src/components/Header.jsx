@@ -21,7 +21,7 @@ function Header() {
                     <h1>Renta un auto en<br />Costa Rica en<br />minutos</h1>
 
                     <div className="header-buttons">
-                        <button className="btn-primary">Ver disponibilidad</button>
+                        <NavLink to="/vehiculos" className="btn-primary">Ver disponibilidad</NavLink>
                         <button className="btn-secondary">Llamar ahora</button>
                     </div>
                 </div>
