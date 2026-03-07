@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(209, 69%, 10%);
+
+    /* Dark slate background exactly like the image */
+    padding: 16px 40px;
+    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar-container * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+.navbar-logo-menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+}
+
+.navbar-logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.navbar-divider {
+    width: 1px;
+    height: 24px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-right: 4px;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 24px;
+
+}
+
+.navbar-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14.5px;
+    font-weight: 500;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.navbar-link:hover {
+    opacity: 0.8;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.navbar-socials {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navbar-socials a {
+    color: #FFFFFF;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.navbar-socials a:hover {
+    transform: translateY(-2px);
+    opacity: 0.8;
+}
+
+.navbar-btn {
+    background-color: #FFFFFF;
+    color: #2D3742;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.navbar-btn:hover {
+    background-color: #F8F9FA;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn:active {
+    transform: scale(0.97);
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 16px 20px;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .navbar-logo-menu {
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .navbar-divider {
+        display: none;
+    }
+
+    .navbar-menu {
+        width: 100%;
+        order: 3;
+        justify-content: space-between;
+    }
+}
