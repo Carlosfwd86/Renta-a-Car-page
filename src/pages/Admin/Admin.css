@@ -1,0 +1,382 @@
+/* ===============================
+   ADMIN PANEL â€“ Estilos premium
+   Complementa el fondo oscuro global de index.css
+================================ */
+
+.admin-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: transparent;
+    /* Hereda el gradiente de body en index.css */
+    font-family: 'Inter', sans-serif;
+}
+
+/* --------- MAIN CONTENT --------- */
+.admin-main {
+    flex-grow: 1;
+    padding: 50px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* --------- HERO HEADER --------- */
+.admin-hero {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 12px 0;
+    letter-spacing: -1.5px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.admin-subtitle {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.admin-subtitle strong {
+    color: #e2e8f0;
+    font-weight: 700;
+}
+
+/* --------- GRID DE TARJETAS --------- */
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+/* --------- TARJETA --------- */
+.admin-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.admin-card {
+    /* Glassmorphism ajustado al fondo oscuro */
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 16px;
+    padding: 32px 28px;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.admin-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.admin-card--disabled {
+    cursor: default;
+    opacity: 0.6;
+}
+
+.admin-card--disabled:hover {
+    transform: none;
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: none;
+}
+
+/* --------- ICONO --------- */
+.admin-card-icon {
+    font-size: 2.4rem;
+    margin-bottom: 4px;
+}
+
+/* --------- TEXTOS DE TARJETA --------- */
+.admin-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #f0f4f8;
+    margin: 0;
+}
+
+.admin-card p {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin: 0;
+    line-height: 1.55;
+    flex-grow: 1;
+}
+
+/* --------- CTA ENLACE --------- */
+.admin-card-cta {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #10b981;
+    /* Verde acento del proyecto */
+    letter-spacing: 0.3px;
+    transition: letter-spacing 0.2s ease;
+}
+
+.admin-card:hover .admin-card-cta {
+    letter-spacing: 1px;
+}
+
+/* --------- BADGE "PRÃ“XIMAMENTE" --------- */
+.admin-card-badge {
+    display: inline-block;
+    margin-top: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #cbd5e1;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    width: fit-content;
+}
+
+/* --------- RESPONSIVE --------- */
+@media (max-width: 768px) {
+    .admin-main {
+        padding: 30px 20px 40px;
+    }
+
+    .admin-title {
+        font-size: 2rem;
+        letter-spacing: -0.5px;
+    }
+}
+
+/* CENTRO DE NOTIFICACIONES */
+.admin-notifications-section {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 50px;
+    backdrop-filter: blur(10px);
+}
+
+.notif-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.notif-header h2 {
+    font-size: 1.5rem;
+    color: #ffffff !important;
+    /* Forzar color blanco */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+}
+
+.notif-refresh {
+    background: transparent;
+    border: 1px solid #10b981;
+    color: #10b981;
+    padding: 6px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.notif-refresh:hover {
+    background: #10b981;
+    color: #ffffff;
+}
+
+.notif-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.notif-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.notif-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.notif-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid transparent;
+    transition: all 0.3s;
+}
+
+.notif-unread {
+    border-left: 4px solid #10b981;
+    background: rgba(16, 185, 129, 0.08);
+}
+
+.notif-read {
+    opacity: 0.5;
+}
+
+.notif-icon {
+    font-size: 1.2rem;
+    margin-top: 2px;
+}
+
+.notif-body {
+    flex-grow: 1;
+}
+
+.notif-msg {
+    color: #ffffff;
+    font-size: 0.95rem;
+    margin: 0 0 4px 0;
+    line-height: 1.4;
+}
+
+.notif-date {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+.notif-action {
+    background: transparent;
+    border: none;
+    color: #10b981;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.3s;
+}
+
+.notif-action:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.notif-empty {
+    text-align: center;
+    color: #94a3b8;
+    padding: 20px;
+    font-style: italic;
+}
+/* --- ESTILOS ESPECÍFICOS DE GESTIÓN DE RESERVAS --- */
+.user-info-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.user-info-cell span {
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-info-cell small {
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+}
+
+.date-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.date-cell small {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.download-btn {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #10b981;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+}
+
+.download-btn:hover {
+    background: #10b981;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    transform: translateY(-2px);
+}
+
+.no-doc {
+    color: #64748b;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.status-pill.confirmada {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.status-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.status-cell small {
+    color: #e2e8f0;
+    font-weight: 700;
+}

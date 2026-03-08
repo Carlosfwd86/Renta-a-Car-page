@@ -1,9 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ===== DESIGN TOKENS ===== */
+:root {
+  --color-primary: hsl(209, 69%, 10%);
+  /* Azul marino profundo – navbar */
+  --color-primary-mid: hsl(209, 60%, 16%);
+  /* Azul un tono más claro */
+  --color-primary-soft: hsl(210, 45%, 22%);
+  /* Azul-slate para variaciones */
+  --color-accent: #10b981;
+  /* Verde esmeralda – búsquedas */
+  --color-surface: #ffffff;
+  --color-text: #1e293b;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+
+  /* Fondo global: gradiente oscuro-azulado premium */
+  --bg-global: linear-gradient(160deg,
+      hsl(209, 69%, 8%) 0%,
+      hsl(210, 55%, 13%) 45%,
+      hsl(215, 40%, 18%) 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  box-sizing: border-box;
-  background-color: #f9fafb;
+  background: var(--bg-global);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: var(--color-text);
 }
 
 #root {

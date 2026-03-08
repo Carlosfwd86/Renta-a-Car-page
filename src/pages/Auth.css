@@ -1,0 +1,296 @@
+/* ===============================
+   AUTH – Login y Registro
+   Estilos premium sobre el fondo oscuro global
+================================ */
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+}
+
+/* --------- TARJETA CENTRAL --------- */
+.auth-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 48px 44px;
+    width: 100%;
+    max-width: 460px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+    animation: authFadeIn 0.4s ease;
+}
+
+@keyframes authFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-card--success {
+    text-align: center;
+    padding: 60px 44px;
+}
+
+/* --------- LOGO --------- */
+.auth-logo {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.auth-logo-link {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.auth-logo-link span {
+    color: #10b981;
+}
+
+/* --------- TÍTULOS --------- */
+.auth-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #f0f4f8;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.5px;
+}
+
+.auth-subtitle {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin: 0 0 32px 0;
+}
+
+/* --------- FORMULARIO --------- */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.auth-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.auth-label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    letter-spacing: 0.2px;
+}
+
+.auth-input {
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.07);
+    color: #f0f4f8;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.auth-input::placeholder {
+    color: rgba(148, 163, 184, 0.6);
+}
+
+.auth-input:focus {
+    border-color: #10b981;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+}
+
+.auth-input--error {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+/* --------- MENSAJES DE ERROR --------- */
+.auth-error-msg {
+    font-size: 0.8rem;
+    color: #f87171;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.auth-error-msg::before {
+    content: '⚠';
+    font-size: 0.75rem;
+}
+
+.auth-error-general {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #fca5a5;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* --------- REGLAS DE CONTRASEÑA --------- */
+.auth-rules {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 14px 16px;
+}
+
+.auth-rules-title {
+    font-size: 0.82rem;
+    color: #94a3b8;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.auth-rules-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.auth-rules-list li {
+    font-size: 0.83rem;
+    color: #64748b;
+    padding-left: 20px;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.auth-rules-list li::before {
+    content: '○';
+    position: absolute;
+    left: 0;
+    font-size: 0.7rem;
+    top: 1px;
+    transition: all 0.2s;
+}
+
+.auth-rules-list li.rule--ok {
+    color: #10b981;
+}
+
+.auth-rules-list li.rule--ok::before {
+    content: '●';
+    color: #10b981;
+}
+
+/* --------- BOTÓN PRINCIPAL --------- */
+.auth-btn {
+    padding: 14px;
+    background: linear-gradient(135deg, hsl(209, 69%, 18%), hsl(209, 69%, 12%));
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+    margin-top: 4px;
+    letter-spacing: 0.3px;
+}
+
+.auth-btn:hover:not(:disabled) {
+    opacity: 0.88;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.auth-btn:active {
+    transform: scale(0.99);
+}
+
+.auth-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* --------- ENLACE INFERIOR --------- */
+.auth-footer-text {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.auth-link {
+    color: #10b981;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.auth-link:hover {
+    color: #34d399;
+    text-decoration: underline;
+}
+
+/* --------- ÉXITO --------- */
+.auth-success-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+    animation: successPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes successPop {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* --------- RESPONSIVE --------- */
+@media (max-width: 520px) {
+    .auth-card {
+        padding: 36px 24px;
+        border-radius: 16px;
+    }
+
+    .auth-title {
+        font-size: 1.5rem;
+    }
+}

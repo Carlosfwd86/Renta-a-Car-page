@@ -1,0 +1,17 @@
+/* ===============================
+   FOOTER – Estilos
+================================ */
+
+.footer-container {
+    background-color: hsl(209, 69%, 8%);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 24px 40px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.footer-container p {
+    margin: 0;
+}

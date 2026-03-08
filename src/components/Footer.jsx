@@ -1,11 +1,12 @@
-import react from 'react'
+import React from 'react';
+import './Footer.css';
 
 function Footer() {
     return (
-        <div>
-            <h1>Soy el Footer</h1>
-        </div>
-    )
+        <footer className="footer-container">
+            <p>© 2026 RentaYA — Todos los derechos reservados.</p>
+        </footer>
+    );
 }
 
-export default Footer
+export default Footer;

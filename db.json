@@ -41,7 +41,14 @@
       "transmision": "Automática",
       "pasajeros": "7",
       "traccion": "4x4",
-      "matricula": "457896"
+      "matricula": "457896",
+      "condicion": "Óptima",
+      "estadoVehiculo": "Rentado",
+      "historialReservas": 0,
+      "kilometraje": 0,
+      "valorFiscal": 0,
+      "depreciacion": 0,
+      "mantenimiento": []
     },
     {
       "id": "1772899456835",
@@ -51,13 +58,20 @@
         "Camioneta"
       ],
       "precioDia": 75,
-      "disponible": true,
+      "disponible": false,
       "imagen": "https://www.toyotacr.com/uploads/family/0ddb2585018ce9fdd2768d178a410080843e43d2.png",
       "combustible": "Diesel",
       "transmision": "Manual",
       "pasajeros": "5",
       "traccion": "4x4",
-      "matricula": "CL242630"
+      "matricula": "CL242630",
+      "condicion": "Óptima",
+      "estadoVehiculo": "Reservado",
+      "historialReservas": 0,
+      "kilometraje": "",
+      "valorFiscal": "",
+      "depreciacion": "",
+      "mantenimiento": []
     },
     {
       "id": "1772899518541",
@@ -69,12 +83,19 @@
       ],
       "precioDia": 95,
       "disponible": true,
-      "imagen": "https://hyundaigt.calidad.grupoq.co.cr/images/modelos/staria/elementos/black_12.webp",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRREh-9uka9BGQKOd4R_p9GhPuk9Gf-FugpuA&s",
       "combustible": "Diesel",
       "transmision": "Automática",
       "pasajeros": "9",
       "traccion": "4x4",
-      "matricula": "mql180"
+      "matricula": "mql180",
+      "condicion": "Óptima",
+      "estadoVehiculo": "Disponible",
+      "historialReservas": 0,
+      "kilometraje": 0,
+      "valorFiscal": 0,
+      "depreciacion": 0,
+      "mantenimiento": []
     },
     {
       "id": "1772906249041",
@@ -90,7 +111,14 @@
       "transmision": "Manual",
       "pasajeros": "15",
       "traccion": "FWD",
-      "matricula": "pb1028"
+      "matricula": "pb1028",
+      "condicion": "Óptima",
+      "estadoVehiculo": "Rentado",
+      "historialReservas": 0,
+      "kilometraje": "",
+      "valorFiscal": "",
+      "depreciacion": "",
+      "mantenimiento": []
     },
     {
       "id": "1772908225313",
@@ -110,7 +138,7 @@
     },
     {
       "id": "1772938306382",
-      "matricula": "QRR205",
+      "matricula": "CL784536",
       "marca": "Toyota",
       "modelo": "Hilux Travo 2026",
       "categoria": [
@@ -184,13 +212,70 @@
   ],
   "reservas": [
     {
-      "id": "1",
-      "idVehiculo": "1",
-      "idUsuario": "1",
-      "fechaInicio": "2026-03-10",
-      "fechaFin": "2026-03-15",
+      "id": "413b",
+      "vehiculoId": "1772899518541",
+      "vehiculoNombre": "Hyundai Staria 2025",
+      "cliente": {
+        "nombre": "Fabio Aguilar",
+        "identificacion": "607820952",
+        "email": "faboagui@gmail.com",
+        "telefono": "(+506) 8823-3365",
+        "direccion": "Calle mamute, 3 marias, Esparza, puntarenas",
+        "idAdjunto": ""
+      },
+      "fechas": {
+        "fechaInicio": "2026-03-12",
+        "fechaFin": "2026-03-18"
+      },
+      "totalDias": 4,
+      "totalPago": 429.4,
+      "pagoId": "424d",
       "estado": "Confirmada",
-      "total": 175
+      "fechaCreacion": "2026-03-08T21:46:33.936Z"
+    },
+    {
+      "id": "6e8d",
+      "vehiculoId": "1772942287950",
+      "vehiculoNombre": "Suzuki Jimny",
+      "cliente": {
+        "nombre": "Christopher González Bustamante",
+        "identificacion": "604550788",
+        "idAdjunto": "big mountain.jpg",
+        "email": "gonzalez2026@gmail.com",
+        "telefono": "(+506) 2075-4040",
+        "direccion": "Cinco estrellas, Puntarenas"
+      },
+      "fechas": {
+        "fechaInicio": "2026-03-10",
+        "fechaFin": "2026-03-12"
+      },
+      "totalDias": 2,
+      "totalPago": 192.1,
+      "pagoId": "8e7e",
+      "estado": "Confirmada",
+      "fechaCreacion": "2026-03-08T22:53:26.887Z"
+    },
+    {
+      "id": "6088",
+      "vehiculoId": "1772938306382",
+      "vehiculoNombre": "Toyota Hilux Travo 2026",
+      "cliente": {
+        "nombre": "Su Hellen Ocampo Rojas",
+        "identificacion": "602580369",
+        "idAdjunto": "Herramientas de producción IA.jpg",
+        "email": "suhellen@gmail.com",
+        "telefono": "(+506) 8794-4246",
+        "direccion": "Tajo Alto , Miramar"
+      },
+      "fechas": {
+        "fechaInicio": "2026-03-31",
+        "fechaFin": "2026-04-09"
+      },
+      "totalDias": 9,
+      "totalPago": 1525.5,
+      "pagoId": "03ae",
+      "estado": "Confirmada",
+      "fechaCreacion": "2026-03-08T23:10:47.909Z"
     }
   ],
   "pagos": [
@@ -201,20 +286,90 @@
       "fecha": "2026-03-08",
       "metodo": "Tarjeta de Crédito",
       "estado": "Completado"
+    },
+    {
+      "id": "424d",
+      "monto": 429.4,
+      "subtotal": 380,
+      "iva": 49.4,
+      "metodo": "Transferencia",
+      "fecha": "2026-03-08T21:46:33.922Z",
+      "cliente": "Fabio Aguilar"
+    },
+    {
+      "id": "8e7e",
+      "monto": 192.1,
+      "subtotal": 170,
+      "iva": 22.1,
+      "metodo": "Transferencia",
+      "fecha": "2026-03-08T22:53:26.874Z",
+      "cliente": "Christopher González Bustamante"
+    },
+    {
+      "id": "03ae",
+      "monto": 1525.5,
+      "subtotal": 1350,
+      "iva": 175.5,
+      "metodo": "Transferencia",
+      "fecha": "2026-03-08T23:10:47.898Z",
+      "cliente": "Su Hellen Ocampo Rojas"
     }
   ],
   "usuarios": [
     {
       "id": "1",
       "nombre": "Admin Principal",
-      "email": "admin@rentaya.com",
+      "email": "cjimenez@rentaya.com",
+      "password": "12345678",
       "rol": "admin"
     },
     {
       "id": "2",
       "nombre": "Cliente Ejemplo",
       "email": "cliente@example.com",
+      "password": "cliente123",
       "rol": "cliente"
+    },
+    {
+      "id": "1772998126818",
+      "nombre": "Chistofer Gonzalez",
+      "email": "cgonzalez@rentaya.com",
+      "password": "12345678",
+      "rol": "cliente"
+    }
+  ],
+  "notificaciones": [
+    {
+      "id": "1",
+      "tipo": "Reserva",
+      "mensaje": "NUEVA RESERVA: Cliente Ejemplo ha reservado un Hyundai Staria.",
+      "fecha": "2026-03-08T15:00:00Z",
+      "leida": true,
+      "emailDestino": "cjimenez@rentaya.com"
+    },
+    {
+      "id": "972c",
+      "tipo": "PAGO_RECIBIDO",
+      "mensaje": "NUEVA RESERVA ($429.40): El cliente Fabio Aguilar ha reservado un Hyundai Staria 2025 por 4 días y adjuntó su comprobante de pago por Transferencia.",
+      "fecha": "2026-03-08T21:46:33.956Z",
+      "leida": false,
+      "emailDestino": "cjimenez@rentaya.com"
+    },
+    {
+      "id": "a98c",
+      "tipo": "PAGO_RECIBIDO",
+      "mensaje": "NUEVA RESERVA ($192.10): El cliente Christopher González Bustamante ha reservado un Suzuki Jimny por 2 días y adjuntó su comprobante de pago por Transferencia.",
+      "fecha": "2026-03-08T22:53:26.898Z",
+      "leida": true,
+      "emailDestino": "cjimenez@rentaya.com"
+    },
+    {
+      "id": "b165",
+      "tipo": "PAGO_RECIBIDO",
+      "mensaje": "NUEVA RESERVA ($1525.50): El cliente Su Hellen Ocampo Rojas ha reservado un Toyota Hilux Travo 2026 por 9 días y adjuntó su comprobante de pago por Transferencia.",
+      "fecha": "2026-03-08T23:10:47.923Z",
+      "leida": false,
+      "emailDestino": "cjimenez@rentaya.com"
     }
   ]
 }

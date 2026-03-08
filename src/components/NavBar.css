@@ -65,6 +65,29 @@
     opacity: 0.8;
 }
 
+.navbar-link.active {
+    color: #FFFFFF;
+    opacity: 1;
+    position: relative;
+}
+
+.navbar-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #10b981;
+    border-radius: 2px;
+}
+
+/* El link de admin tiene su propio comportamiento activo */
+.navbar-link--admin.active::after {
+    background-color: #ffb703;
+}
+
+
 .navbar-actions {
     display: flex;
     align-items: center;
@@ -134,4 +157,86 @@
         order: 3;
         justify-content: space-between;
     }
+}
+
+/* --------- LINK ESPECIAL ADMIN --------- */
+.navbar-link--admin {
+    color: #ffb703 !important;
+    font-weight: 700 !important;
+}
+
+/* --------- BOTÓN OUTLINE (Ingresar) --------- */
+.navbar-btn--outline {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.navbar-btn--outline:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: none;
+}
+
+/* --------- BOTÓN LOGOUT --------- */
+.navbar-btn--logout {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    padding: 8px 14px;
+}
+
+.navbar-btn--logout:hover {
+    background-color: rgba(239, 68, 68, 0.25);
+    color: #f87171;
+    box-shadow: none;
+}
+
+/* --------- USUARIO LOGUEADO --------- */
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navbar-user-info {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.navbar-user-icon {
+    font-size: 1.3rem;
+    color: #10b981;
+}
+
+.navbar-user-nombre {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* --------- CONTENEDOR DE BOTONES AUTH --------- */
+.navbar-auth-btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }

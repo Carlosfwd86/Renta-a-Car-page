@@ -1,0 +1,11 @@
+/* ===============================
+   HOME – Estilos de la página principal
+   El fondo viene del gradiente global de index.css
+================================ */
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: transparent;
+}

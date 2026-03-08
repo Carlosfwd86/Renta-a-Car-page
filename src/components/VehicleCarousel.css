@@ -1,0 +1,489 @@
+/* ===============================
+   VEHICLE CAROUSEL – Rediseño Horizontal
+   Flechas a los costados y título esbelto
+================================ */
+
+.home-carousel-section {
+    padding: 80px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+/* --------- HEADER DEL CARRUSEL --------- */
+.carousel-view-header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-view-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    /* Esbelto / Thinner weight */
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.carousel-view-title span {
+    font-weight: 700;
+    color: #10b981;
+}
+
+.carousel-view-line {
+    width: 60px;
+    height: 3px;
+    background: #10b981;
+    margin-top: 15px;
+    border-radius: 2px;
+}
+
+/* --------- CONTENEDOR RELATIVO PARA FLECHAS --------- */
+.carousel-relative-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 60px;
+    /* Espacio para las flechas */
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(12px);
+    z-index: 10;
+}
+
+.carousel-arrow--left {
+    left: 0;
+}
+
+.carousel-arrow--right {
+    right: 0;
+}
+
+.carousel-arrow:hover {
+    background-color: #10b981;
+    border-color: #10b981;
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+}
+
+/* --------- SLIDER CONTAINER --------- */
+.carousel-slider-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+    will-change: transform;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* --------- VEHICLE CARD --------- */
+.v-card {
+    background-color: #ffffff;
+    border-radius: 32px;
+    width: 100%;
+    max-width: 1100px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: row;
+    /* Estructura horizontal */
+    align-items: stretch;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.v-card:hover {
+    transform: translateY(-8px) scale(1.01);
+}
+
+.v-card-img-container {
+    flex: 1.2;
+    padding: 50px;
+    background: radial-gradient(circle at center, #ffffff 0%, #f8fafc 100%);
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.v-card-img {
+    width: 110%;
+    height: 110%;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+    transition: transform 0.5s ease;
+}
+
+.v-card:hover .v-card-img {
+    transform: scale(1.1) translateX(10px);
+}
+
+.v-card-price-badge {
+    position: absolute;
+    top: 35px;
+    left: 45px;
+    background-color: #10b981;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 40px;
+    font-weight: 800;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    z-index: 5;
+}
+
+.price-val {
+    font-size: 1.6rem;
+}
+
+.v-card-info {
+    flex: 1;
+    padding: 50px 60px;
+    border-top: none;
+    border-left: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.v-card-brand {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0;
+}
+
+.v-card-model {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin: 4px 0 20px 0;
+    font-weight: 400;
+}
+
+.v-card-categories {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.v-cat-pill {
+    background-color: #f1f5f9;
+    color: #64748b;
+    padding: 6px 14px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.v-cat-pill--eco {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.v-card-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.v-card-header {
+    margin-bottom: 25px;
+}
+
+.v-card-tag {
+    display: inline-block;
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.v-card-specs-line {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin: 8px 0 0 0;
+}
+
+.v-feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #64748b;
+}
+
+.v-feature svg {
+    font-size: 1.4rem;
+    color: #cbd5e1;
+    flex-shrink: 0;
+}
+
+.v-feature-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.v-feature-text small {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.v-feature-text span {
+    font-size: 1rem;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.v-feature--eco svg {
+    color: #10b981;
+}
+
+.v-card-btn {
+    width: 100%;
+    padding: 16px;
+    background-color: transparent;
+    color: #1e293b;
+    border: 2px solid #1e293b;
+    border-radius: 14px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.v-card-btn:hover {
+    background-color: #1e293b;
+    color: #ffffff;
+}
+
+/* Indicadores de paginación */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.carousel-dot.active {
+    background-color: #10b981;
+    width: 35px;
+    border-radius: 5px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 900px) {
+    .v-card {
+        flex-direction: column;
+        max-width: 480px;
+    }
+
+    .v-card-img-container {
+        height: 300px;
+        flex: none;
+    }
+
+    .v-card-info {
+        padding: 30px;
+        border-left: none;
+        border-top: 1px solid #f1f5f9;
+    }
+
+    .v-card-price-badge {
+        top: auto;
+        bottom: 20px;
+        left: auto;
+        right: 20px;
+    }
+
+    .carousel-relative-container {
+        padding: 0;
+    }
+
+    .carousel-arrow {
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
+    }
+
+    .carousel-view-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* ===================================================
+   VERSION COMPACTA (Estilo Imagen Adjunta)
+=================================================== */
+
+.carousel-compact {
+    padding: 20px 0 40px;
+    max-width: 100%;
+    margin-bottom: 30px;
+    background: transparent;
+}
+
+.carousel-compact .carousel-relative-container {
+    padding: 0 40px;
+}
+
+.carousel-compact .carousel-slider-container {
+    border-radius: 0;
+}
+
+.carousel-compact .carousel-slide {
+    padding: 10px;
+}
+
+.carousel-compact .v-card {
+    background-color: #1a202e;
+    /* Fondo oscuro tipo imagen */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-compact .v-card:hover {
+    border-color: #10b981;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(16, 185, 129, 0.2);
+}
+
+.carousel-compact .v-card-img-container {
+    height: 180px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 6px 6px 0 0;
+}
+
+.carousel-compact .v-card-info {
+    padding: 15px;
+    border-top: none;
+    text-align: center;
+}
+
+.carousel-compact .v-card-brand {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.carousel-compact .v-card-specs {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 12px;
+}
+
+.carousel-compact .v-card-compact-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 12px;
+}
+
+.carousel-compact .compact-price {
+    font-size: 0.9rem;
+    color: #10b981;
+    font-weight: 700;
+}
+
+.carousel-compact .v-compact-btn {
+    background: transparent;
+    border: 1px solid #10b981;
+    color: #10b981;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.carousel-compact .v-compact-btn:hover {
+    background: #10b981;
+    color: white;
+}
+
+/* Flechas estilo imagen (Gris oscuro) */
+.carousel-compact .carousel-arrow {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.carousel-compact .carousel-arrow:hover {
+    background: #10b981;
+    color: white;
+}
+
+@media (max-width: 1100px) {
+    .carousel-compact .carousel-relative-container {
+        padding: 0 30px;
+    }
+}

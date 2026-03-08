@@ -1,40 +1,100 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
+import { getNotificaciones, markAsRead } from '../../services/NotificacionesService';
+import { FaBell, FaInfoCircle, FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
+import './Admin.css';
 
 function Admin() {
+    const [notificaciones, setNotificaciones] = useState([]);
+    const [cargando, setCargando] = useState(true);
+
+    useEffect(() => {
+        cargarNotificaciones();
+    }, []);
+
+    const cargarNotificaciones = async () => {
+        const data = await getNotificaciones();
+        if (data) {
+            // Ordenamos por fecha descendente
+            const ordenadas = data.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+            setNotificaciones(ordenadas);
+        }
+        setCargando(false);
+    };
+
+    const handleLeer = async (id) => {
+        await markAsRead(id);
+        cargarNotificaciones();
+    };
+
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: '#f9fafb' }}>
+        <div className="admin-page">
             <NavBar />
 
-            <main style={{ flexGrow: 1, padding: '40px' }}>
-                <h1 style={{ color: 'hsl(209, 69%, 10%)', marginBottom: '20px' }}>Panel Administrativo</h1>
-                <p>Bienvenido al dashboard de administración.</p>
+            <main className="admin-main">
+                <div className="admin-hero">
+                    <h1 className="admin-title">Panel Administrativo</h1>
+                    <p className="admin-subtitle">Bienvenido al dashboard de administración de <strong>RentaYA</strong>.</p>
+                </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', marginTop: '30px' }}>
+                {/* Centro de Notificaciones (Simulación de Correo) */}
+                <div className="admin-notifications-section">
+                    <div className="notif-header">
+                        <h2><FaBell /> Avisos del Sistema</h2>
+                        <button className="notif-refresh" onClick={cargarNotificaciones}>Actualizar</button>
+                    </div>
+                    <div className="notif-list">
+                        {notificaciones.length === 0 && !cargando && <p className="notif-empty">No hay avisos pendientes.</p>}
+                        {notificaciones.map(n => (
+                            <div key={n.id} className={`notif-item ${n.leida ? 'notif-read' : 'notif-unread'}`}>
+                                <div className="notif-icon">
+                                    {n.tipo === 'PAGO_RECIBIDO' ? <FaCheckCircle style={{ color: '#10b981' }} /> : <FaInfoCircle />}
+                                </div>
+                                <div className="notif-body">
+                                    <p className="notif-msg">{n.mensaje}</p>
+                                    <span className="notif-date">{new Date(n.fecha).toLocaleString()}</span>
+                                </div>
+                                {!n.leida && (
+                                    <button className="notif-action" onClick={() => handleLeer(n.id)}>Marcar leído</button>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
 
-                    <Link to="/admin/vehiculos" style={{ textDecoration: 'none', color: 'inherit' }}>
-                        <div style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', cursor: 'pointer', height: '100%', transition: 'transform 0.2s, boxShadow 0.2s' }}
-                            onMouseOver={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.boxShadow = '0 6px 12px rgba(0,0,0,0.15)' }}
-                            onMouseOut={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)' }}>
-                            <h3>Gestión de Vehículos 🚗</h3>
+                <div className="admin-grid">
+                    <Link to="/admin/vehiculos" className="admin-card-link">
+                        <div className="admin-card">
+                            <div className="admin-card-icon">🚗</div>
+                            <h3>Gestión de Vehículos</h3>
                             <p>Añade, edita (PATCH) o elimina vehículos bajo el estándar CRUD completo.</p>
+                            <span className="admin-card-cta">Administrar →</span>
                         </div>
                     </Link>
 
-                    {/* Tarjetas de ejemplo que luego se conectarán con DB */}
-                    <div style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-                        <h3>Gestión de Reservas 📅</h3>
-                        <p>Revisa y administra las reservas activas.</p>
-                    </div>
-                    <div style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-                        <h3>Gestión de Pagos 💳</h3>
+                    <Link to="/admin/reservas" className="admin-card-link">
+                        <div className="admin-card">
+                            <div className="admin-card-icon">📅</div>
+                            <h3>Gestión de Reservas</h3>
+                            <p>Revisa solicitudes, verifica documentacion (ID/Pasaporte) y administra alquileres activos.</p>
+                            <span className="admin-card-cta">Administrar →</span>
+                        </div>
+                    </Link>
+
+                    <div className="admin-card admin-card--disabled">
+                        <div className="admin-card-icon">💳</div>
+                        <h3>Gestión de Pagos</h3>
                         <p>Revisa el historial de transacciones.</p>
+                        <span className="admin-card-badge">Próximamente</span>
                     </div>
-                    <div style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-                        <h3>Gestión de Usuarios 🧑‍💼</h3>
+
+                    <div className="admin-card admin-card--disabled">
+                        <div className="admin-card-icon">🧑‍💼</div>
+                        <h3>Gestión de Usuarios</h3>
                         <p>Administra clientes y roles.</p>
+                        <span className="admin-card-badge">Próximamente</span>
                     </div>
                 </div>
             </main>
