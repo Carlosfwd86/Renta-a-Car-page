@@ -127,6 +127,17 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+.active-pill {
+    background-color: hsl(209, 69%, 10%);
+    color: white;
+    border-color: hsl(209, 69%, 10%);
+}
+
+.active-pill:hover {
+    background-color: hsl(209, 69%, 15%);
+    color: white;
+}
+
 .filter-pasajeros {
     display: flex;
     align-items: center;

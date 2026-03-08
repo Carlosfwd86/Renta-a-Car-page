@@ -4,79 +4,182 @@
       "id": "1",
       "marca": "Toyota",
       "modelo": "Yaris",
-      "categoria": "Económico",
+      "categoria": [
+        "Económico"
+      ],
       "precioDia": 35,
-      "disponible": true,
+      "disponible": false,
       "imagen": "https://tcl-s3-bucket.s3.amazonaws.com/web/media/images/YarisI2.max-730x330.png",
       "combustible": "Gasolina",
       "transmision": "Automática",
       "pasajeros": "5",
-      "traccion": "4x2"
+      "traccion": "4x2",
+      "matricula": "abc123",
+      "condicion": "Óptima",
+      "estadoVehiculo": "Fuera de servicio",
+      "historialReservas": "2",
+      "kilometraje": "105000",
+      "valorFiscal": "4500",
+      "depreciacion": "30",
+      "mantenimiento": [
+        "Ajustes",
+        "Revisión general",
+        "Lavado"
+      ]
     },
     {
       "id": "2",
       "marca": "Ford",
       "modelo": "Explorer",
-      "categoria": "SUV",
+      "categoria": [
+        "SUV"
+      ],
       "precioDia": 75,
       "disponible": true,
       "imagen": "https://pictures.dealer.com/fd-DIG_IMAGES/5ec45e39525c4a287249c35ce4fad2a8.png",
       "combustible": "Gasolina",
       "transmision": "Automática",
       "pasajeros": "7",
-      "traccion": "4x4"
+      "traccion": "4x4",
+      "matricula": "457896"
     },
     {
       "id": "1772899456835",
       "marca": "Toyota",
       "modelo": "Hilux 2026",
-      "categoria": "Camionetas",
+      "categoria": [
+        "Camioneta"
+      ],
       "precioDia": 75,
       "disponible": true,
       "imagen": "https://www.toyotacr.com/uploads/family/0ddb2585018ce9fdd2768d178a410080843e43d2.png",
       "combustible": "Diesel",
       "transmision": "Manual",
       "pasajeros": "5",
-      "traccion": "4x4"
+      "traccion": "4x4",
+      "matricula": "CL242630"
     },
     {
       "id": "1772899518541",
       "marca": "Hyundai",
       "modelo": "Staria 2025",
-      "categoria": "Lujo",
+      "categoria": [
+        "Lujo",
+        "Van"
+      ],
       "precioDia": 95,
       "disponible": true,
       "imagen": "https://hyundaigt.calidad.grupoq.co.cr/images/modelos/staria/elementos/black_12.webp",
       "combustible": "Diesel",
       "transmision": "Automática",
       "pasajeros": "9",
-      "traccion": "4x4"
+      "traccion": "4x4",
+      "matricula": "mql180"
     },
     {
       "id": "1772906249041",
       "marca": "Toyota",
       "modelo": "Hiace 2026",
-      "categoria": "Lujo",
+      "categoria": [
+        "Van"
+      ],
       "precioDia": 105,
       "disponible": true,
       "imagen": "https://www.toyotacr.com/uploads/gallery/c0e45ebcf9d71b7f1b2b0133730f93ad69a62384.png",
       "combustible": "Diesel",
       "transmision": "Manual",
       "pasajeros": "15",
-      "traccion": "FWD"
+      "traccion": "FWD",
+      "matricula": "pb1028"
     },
     {
       "id": "1772908225313",
       "marca": "Toyota",
       "modelo": "Canry 2026",
-      "categoria": "Híbridos",
-      "precioDia": 99.99,
+      "categoria": [
+        "Híbrido/Eléctrico"
+      ],
+      "precioDia": 100,
       "disponible": true,
       "imagen": "https://www.buyatoyota.com/sharpr/vcr/adobe/assets/urn:aaid:aem:3c641b8d-0797-49ff-b511-8182316f99e9/as/image.png?",
       "combustible": "Eléctrico",
       "transmision": "Automática",
       "pasajeros": "5",
-      "traccion": "AWD"
+      "traccion": "AWD",
+      "matricula": "cgl186"
+    },
+    {
+      "id": "1772938306382",
+      "matricula": "QRR205",
+      "marca": "Toyota",
+      "modelo": "Hilux Travo 2026",
+      "categoria": [
+        "Camioneta",
+        "Híbrido/Eléctrico"
+      ],
+      "precioDia": 150,
+      "disponible": true,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvLZHlP6HmmRazkV_nxsZCvvZBJt3V0nGTpA&s",
+      "combustible": "Eléctrico",
+      "transmision": "Automática",
+      "pasajeros": "5",
+      "traccion": "4x4",
+      "condicion": "Óptima",
+      "estadoVehiculo": "Disponible",
+      "historialReservas": 0,
+      "kilometraje": 0,
+      "valorFiscal": 0,
+      "depreciacion": 0,
+      "mantenimiento": []
+    },
+    {
+      "id": "1772938629820",
+      "matricula": "AAA026",
+      "marca": "Kia",
+      "modelo": "EV9",
+      "categoria": [
+        "SUV",
+        "Híbrido/Eléctrico"
+      ],
+      "precioDia": 200,
+      "disponible": true,
+      "imagen": "https://pictures.dealer.com/o/ourismanalexandriakia/1935/a77de1216733eb14f987b302b72e75a4x.jpg?impolicy=downsize_bkpt&imdensity=1&w=414",
+      "combustible": "Eléctrico",
+      "transmision": "Automática",
+      "pasajeros": "7",
+      "traccion": "AWD",
+      "condicion": "Óptima",
+      "estadoVehiculo": "Disponible",
+      "historialReservas": 0,
+      "kilometraje": 0,
+      "valorFiscal": 0,
+      "depreciacion": 0,
+      "mantenimiento": []
+    },
+    {
+      "id": "1772942287950",
+      "matricula": "jym175",
+      "marca": "Suzuki",
+      "modelo": "Jimny",
+      "categoria": [
+        "Compacto"
+      ],
+      "precioDia": 85,
+      "disponible": true,
+      "imagen": "https://hips.hearstapps.com/hmg-prod/images/jimnycomercial-1599637671.jpg?crop=0.708xw:1.00xh;0.147xw,0&resize=1200:*",
+      "combustible": "Gasolina",
+      "transmision": "Manual",
+      "pasajeros": "5",
+      "traccion": "4x4",
+      "condicion": "Óptima",
+      "estadoVehiculo": "Disponible",
+      "historialReservas": 0,
+      "kilometraje": 0,
+      "valorFiscal": 0,
+      "depreciacion": 0,
+      "mantenimiento": [
+        "Ajustes"
+      ]
     }
   ],
   "reservas": [
