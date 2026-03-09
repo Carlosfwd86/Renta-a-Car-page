@@ -1,0 +1,146 @@
+/* ===================================================
+   GESTIÓN DE PAGOS - Estilos específicos
+=================================================== */
+
+/* Estado badges */
+.gp-estado {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.gp-estado--ok {
+    background: rgba(16, 185, 129, 0.12);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.gp-estado--pendiente {
+    background: rgba(234, 179, 8, 0.12);
+    color: #eab308;
+    border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.gp-estado--error {
+    background: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.gp-estado--revision {
+    background: rgba(59, 130, 246, 0.12);
+    color: #3b82f6;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Método */
+.gp-metodo-badge {
+    background: rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Montos */
+.gp-monto {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #10b981;
+}
+
+.gp-monto-det {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+/* Fecha */
+.gp-fecha {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* Filtro botones estado */
+.gp-filtro-estado {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.gp-filtro-btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.gp-filtro-btn--active,
+.gp-filtro-btn:hover {
+    background: #10b981;
+    border-color: #10b981;
+    color: #fff;
+}
+
+/* Modal de pagos */
+.gp-modal-body {
+    flex-direction: column !important;
+}
+
+.gp-info-readonly {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 20px;
+    width: 100%;
+}
+
+.gp-info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gp-info-row:last-child {
+    border-bottom: none;
+}
+
+.gp-info-row--total {
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 2px solid rgba(16, 185, 129, 0.3);
+}
+
+.gp-info-lbl {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.gp-info-val {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.gp-total {
+    font-size: 1.4rem;
+    color: #10b981 !important;
+}
+
+.gp-textarea {
+    resize: vertical;
+    min-height: 80px;
+    width: 100%;
+    font-family: inherit;
+}

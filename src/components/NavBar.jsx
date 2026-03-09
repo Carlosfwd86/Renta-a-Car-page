@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { FaFacebook, FaInstagram, FaUserCircle, FaSignOutAlt, FaSignInAlt } from 'react-icons/fa';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../services/AuthContext';
 import './NavBar.css';
 
 function NavBar() {

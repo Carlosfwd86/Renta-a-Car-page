@@ -1,0 +1,348 @@
+/* ===================================================
+   GESTIÓN DE USUARIOS & PAGOS - Estilos compartidos
+=================================================== */
+
+/* Alerta flotante */
+.gu-alerta {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(16, 185, 129, 0.95);
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: 12px;
+    font-weight: 700;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+}
+
+.gu-alerta--error {
+    background: rgba(239, 68, 68, 0.95);
+}
+
+/* Toolbar */
+.gu-toolbar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.gu-search-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px 18px;
+    flex: 1;
+    min-width: 250px;
+}
+
+.gu-search-icon {
+    color: #64748b;
+    font-size: 1rem;
+}
+
+.gu-search-input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.gu-btn-nuevo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #10b981;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.gu-btn-nuevo:hover {
+    background: #059669;
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Stats row */
+.gu-stats-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.gu-stat {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 20px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    min-width: 140px;
+    backdrop-filter: blur(10px);
+}
+
+.gu-stat-num {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+}
+
+.gu-stat-label {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.gp-stat-verde {
+    color: #10b981 !important;
+}
+
+/* Avatar */
+.gu-avatar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.gu-avatar-icon {
+    font-size: 2.2rem;
+    color: #94a3b8;
+    flex-shrink: 0;
+}
+
+.gu-email {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* Rol badge */
+.gu-rol-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.badge-admin {
+    background: rgba(168, 85, 247, 0.15);
+    color: #a855f7;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.badge-cliente {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* Modal usuario */
+.gu-modal-box {
+    max-width: 600px !important;
+}
+
+.gu-modal-body {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.gu-modal-avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    min-width: 130px;
+}
+
+.gu-big-avatar {
+    font-size: 5rem;
+    color: #94a3b8;
+}
+
+.gu-modal-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex: 1;
+}
+
+@media (max-width: 600px) {
+    .gu-modal-body {
+        flex-direction: column;
+    }
+
+    .gu-toolbar {
+        flex-direction: column;
+    }
+}
+
+/* =====================================================
+   OVERRIDES: Tabla oscura para Admin de Usuarios/Pagos
+   (sobreescribe los colores claros de GestionVehiculos.css)
+===================================================== */
+
+/* Encabezado de tabla */
+.gestion-page .tabla-thead-row {
+    background-color: rgba(15, 23, 42, 0.9);
+    border-bottom: 2px solid rgba(16, 185, 129, 0.3);
+}
+
+.gestion-page .tabla-th {
+    color: #10b981;
+    letter-spacing: 0.8px;
+}
+
+/* Filas del cuerpo */
+.gestion-page .tabla-row {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.gestion-page .tabla-row:hover {
+    background-color: rgba(16, 185, 129, 0.06);
+}
+
+/* Texto de celdas */
+.gestion-page .tabla-td {
+    color: #e2e8f0;
+}
+
+.gestion-page .tabla-nombre {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.gestion-page .tabla-modelo {
+    color: #94a3b8;
+}
+
+.gestion-page .tabla-matricula {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.gestion-page .tabla-vacia {
+    color: #64748b;
+}
+
+/* Email / fecha */
+.gestion-page .gu-email,
+.gestion-page .gp-fecha {
+    color: #cbd5e1;
+}
+
+/* Monto en tabla */
+.gestion-page .gp-monto {
+    color: #10b981;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+.gestion-page .gp-monto-det {
+    color: #64748b;
+    font-size: 0.78rem;
+}
+
+/* Modal — fondo blanco → oscuro */
+.gestion-page .modal-box {
+    background-color: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gestion-page .modal-label {
+    color: #94a3b8;
+}
+
+.gestion-page .modal-section-title {
+    color: #ffffff;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.gestion-page .modal-input,
+.gestion-page .modal-select {
+    background-color: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+
+.gestion-page .modal-select option {
+    background-color: #1e293b;
+    color: #ffffff;
+}
+
+.gestion-page .modal-input::placeholder {
+    color: #64748b;
+}
+
+.gestion-page .modal-input:focus,
+.gestion-page .modal-select:focus {
+    border-color: #10b981;
+    background-color: rgba(255, 255, 255, 0.1);
+    outline: none;
+}
+
+.gestion-page .modal-input--readonly {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #94a3b8;
+}
+
+.gestion-page .modal-footer {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-top-color: rgba(255, 255, 255, 0.07);
+}
+
+.gestion-page .btn-modal--cancel {
+    color: #cbd5e1;
+    border-color: rgba(255, 255, 255, 0.15);
+    background-color: transparent;
+}
+
+.gestion-page .btn-modal--cancel:hover {
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+/* Info sección readonly (modal pagos) */
+.gestion-page .gp-info-lbl {
+    color: #94a3b8;
+}
+
+.gestion-page .gp-info-val {
+    color: #ffffff;
+}
+
+.gestion-page .gp-textarea {
+    background-color: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+
+.gestion-page .gp-textarea::placeholder {
+    color: #64748b;
+}

@@ -43,3 +43,161 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+
+/* ─────────────────────────────────────────────
+   HERO BANNER COMPARTIDO (Reservas, AtencionCliente, etc.)
+   Igual al patron de Nosotros y Contacto
+───────────────────────────────────────────── */
+.page-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.page-hero__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+/* Si no hay imagen, muestra un degradado de fondo */
+.page-hero__img:not([src]),
+.page-hero__img[src=""] {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+}
+
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg,
+      #020617 0%,
+      rgba(2, 6, 23, 0.55) 55%,
+      rgba(2, 6, 23, 0.25) 100%);
+  z-index: 2;
+}
+
+.page-hero__content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.page-hero__content h1 {
+  font-size: 3.2rem;
+  color: #ffffff;
+  font-weight: 300;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.page-hero__content h1 span {
+  font-weight: 800;
+  color: #10b981;
+}
+
+.page-hero__content p {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    height: 50vh;
+    min-height: 280px;
+  }
+
+  .page-hero__content h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .page-hero__content p {
+    font-size: 1rem;
+  }
+}
+
+/* ─── SweetAlert2 – Tema RentaYA ─── */
+.swal-renta-popup {
+  background: #0f172a !important;
+  border: 1px solid rgba(16, 185, 129, 0.25) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(16, 185, 129, 0.1) !important;
+}
+
+.swal-renta-title {
+  color: #ffffff !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+}
+
+.swal2-html-container {
+  color: #94a3b8 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.swal-renta-confirm {
+  background: #10b981 !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  padding: 10px 28px !important;
+  font-family: 'Inter', sans-serif !important;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35) !important;
+}
+
+.swal-renta-confirm:hover {
+  background: #059669 !important;
+}
+
+.swal-renta-cancel {
+  background: rgba(255, 255, 255, 0.07) !important;
+  color: #cbd5e1 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  padding: 10px 28px !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.swal-renta-cancel:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Sobrescribe colores de íconos de SweetAlert */
+.swal2-icon.swal2-success .swal2-success-ring {
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+.swal2-icon.swal2-success [class^='swal2-success-line'] {
+  background: #10b981 !important;
+}
+
+.swal2-icon.swal2-warning {
+  border-color: #f59e0b !important;
+  color: #f59e0b !important;
+}
+
+.swal2-icon.swal2-error {
+  border-color: #ef4444 !important;
+  color: #ef4444 !important;
+}
+
+.swal2-icon.swal2-question {
+  border-color: #3b82f6 !important;
+  color: #3b82f6 !important;
+}

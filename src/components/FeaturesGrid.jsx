@@ -14,7 +14,7 @@ function FeaturesGrid() {
             titulo: "Reserva en línea",
             descripcion: "Busca, selecciona y paga tu alquiler directamente desde tu dispositivo con confirmación inmediata.",
             link: "/reservas",
-            img: "https://images.unsplash.com/photo-1512428559083-a401c430e70a?auto=format&fit=crop&q=80&w=400"
+            img: new URL('../imgs/ReservaEnLinea.jpeg', import.meta.url).href
         },
         {
             id: 2,
@@ -42,14 +42,14 @@ function FeaturesGrid() {
             titulo: "Depósitos de garantía",
             descripcion: "Devolución completa del depósito tras inspección sin daños. Seguridad y claridad en cada alquiler.",
             link: "/atencion-cliente",
-            img: "https://images.unsplash.com/photo-1554224155-6726b3ff365c?auto=format&fit=crop&q=80&w=400"
+            img: new URL('../imgs/DepositoGarantia.jpeg', import.meta.url).href
         },
         {
             id: 6,
             titulo: "Pagos flexible",
             descripcion: "Múltiples opciones de pago y confirmación instantánea. Alquila con confianza.",
             link: "/atencion-cliente",
-            img: "https://images.unsplash.com/photo-1556742511-97a76c14dd53?auto=format&fit=crop&q=80&w=400"
+            img: new URL('../imgs/PagosFlexibles.jpeg', import.meta.url).href
         }
     ];
 

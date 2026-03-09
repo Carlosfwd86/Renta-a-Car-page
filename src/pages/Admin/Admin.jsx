@@ -83,19 +83,23 @@ function Admin() {
                         </div>
                     </Link>
 
-                    <div className="admin-card admin-card--disabled">
-                        <div className="admin-card-icon">💳</div>
-                        <h3>Gestión de Pagos</h3>
-                        <p>Revisa el historial de transacciones.</p>
-                        <span className="admin-card-badge">Próximamente</span>
-                    </div>
+                    <Link to="/admin/pagos" className="admin-card-link">
+                        <div className="admin-card">
+                            <div className="admin-card-icon">💳</div>
+                            <h3>Gestión de Pagos</h3>
+                            <p>Revisa el historial de transacciones, actualiza estados (PATCH) y gestiona comprobantes.</p>
+                            <span className="admin-card-cta">Administrar →</span>
+                        </div>
+                    </Link>
 
-                    <div className="admin-card admin-card--disabled">
-                        <div className="admin-card-icon">🧑‍💼</div>
-                        <h3>Gestión de Usuarios</h3>
-                        <p>Administra clientes y roles.</p>
-                        <span className="admin-card-badge">Próximamente</span>
-                    </div>
+                    <Link to="/admin/usuarios" className="admin-card-link">
+                        <div className="admin-card">
+                            <div className="admin-card-icon">🧑‍💼</div>
+                            <h3>Gestión de Usuarios</h3>
+                            <p>Visualiza, edita perfiles, cambia roles (PATCH) y elimina cuentas del sistema.</p>
+                            <span className="admin-card-cta">Administrar →</span>
+                        </div>
+                    </Link>
                 </div>
             </main>
 

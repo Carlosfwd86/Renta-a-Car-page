@@ -19,9 +19,9 @@ function VehicleCarousel({ tipo = 'completo', onSelectVehicle }) {
     useEffect(() => {
         const updateItems = () => {
             if (tipo === 'compacto') {
-                if (window.innerWidth > 1400) setItemsPerView(4);
-                else if (window.innerWidth > 1100) setItemsPerView(3);
-                else if (window.innerWidth > 768) setItemsPerView(2);
+                if (window.innerWidth > 1200) setItemsPerView(4);
+                else if (window.innerWidth > 992) setItemsPerView(3);
+                else if (window.innerWidth > 600) setItemsPerView(2);
                 else setItemsPerView(1);
             } else {
                 setItemsPerView(1);
@@ -80,7 +80,11 @@ function VehicleCarousel({ tipo = 'completo', onSelectVehicle }) {
 
     return (
         <section className={`home-carousel-section ${tipo === 'compacto' ? 'carousel-compact' : ''}`}>
-            {tipo !== 'compacto' && (
+            {tipo === 'compacto' ? (
+                <div className="carousel-view-header">
+                    <h2 className="carousel-view-title">Vehículos <span>Nuevos Destacados</span></h2>
+                </div>
+            ) : (
                 <div className="carousel-view-header">
                     <h2 className="carousel-view-title">Vehículos <span>Disponibles</span></h2>
                 </div>
@@ -118,10 +122,40 @@ function VehicleCarousel({ tipo = 'completo', onSelectVehicle }) {
 
                                     <div className="v-card-info">
                                         <div className="v-card-header">
-                                            <span className="v-card-tag">Destacado</span>
+                                            {tipo !== 'compacto' && <span className="v-card-tag">Destacado</span>}
                                             <h3 className="v-card-brand">{v.marca} {v.modelo}</h3>
-                                            <p className="v-card-specs-line">{v.combustible} • {v.transmision} • {v.traccion}</p>
+
+                                            {tipo === 'compacto' && (
+                                                <div className="v-card-categories-compact">
+                                                    {(Array.isArray(v.categoria) ? v.categoria : [v.categoria]).slice(0, 1).map((cat, i) => (
+                                                        <span key={i} className="v-cat-pill-compact">
+                                                            {cat}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            )}
+
+                                            {tipo !== 'compacto' && (
+                                                <p className="v-card-specs-line">{v.combustible} • {v.transmision} • {v.traccion}</p>
+                                            )}
                                         </div>
+
+                                        {tipo === 'compacto' && (
+                                            <div className="v-card-features-compact">
+                                                <div className="v-compact-feature">
+                                                    <FaUserFriends /> <span>{v.pasajeros || '5'}</span>
+                                                </div>
+                                                <div className="v-compact-feature">
+                                                    <FaCog /> <span>{v.transmision === 'Automática' ? 'Auto' : 'Man'}</span>
+                                                </div>
+                                                <div className="v-compact-feature">
+                                                    <FaGasPump /> <span>{v.combustible}</span>
+                                                </div>
+                                                <div className="v-compact-feature">
+                                                    <FaCompass /> <span>{v.traccion}</span>
+                                                </div>
+                                            </div>
+                                        )}
 
                                         {tipo !== 'compacto' && (
                                             <>
@@ -175,11 +209,17 @@ function VehicleCarousel({ tipo = 'completo', onSelectVehicle }) {
                                                 </button>
                                             </>
                                         )}
-
                                         {tipo === 'compacto' && (
-                                            <div className="v-card-compact-footer">
-                                                <span className="compact-price">${v.precioDia}/día</span>
-                                                <button className="v-compact-btn">Ver</button>
+                                            <div className="v-card-compact-footer-premium">
+                                                <button
+                                                    className="v-compact-btn-premium"
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        onSelectVehicle && onSelectVehicle(v);
+                                                    }}
+                                                >
+                                                    Reserva ya
+                                                </button>
                                             </div>
                                         )}
                                     </div>
@@ -195,18 +235,20 @@ function VehicleCarousel({ tipo = 'completo', onSelectVehicle }) {
             </div>
 
             {/* Indicadores de paginación o dots (Opcional en compacto) */}
-            {tipo !== 'compacto' && (
-                <div className="carousel-dots">
-                    {vehiculos.map((_, i) => (
-                        <button
-                            key={i}
-                            className={`carousel-dot ${i === indiceActual ? 'active' : ''}`}
-                            onClick={() => setIndiceActual(i)}
-                        />
-                    ))}
-                </div>
-            )}
-        </section>
+            {
+                tipo !== 'compacto' && (
+                    <div className="carousel-dots">
+                        {vehiculos.map((_, i) => (
+                            <button
+                                key={i}
+                                className={`carousel-dot ${i === indiceActual ? 'active' : ''}`}
+                                onClick={() => setIndiceActual(i)}
+                            />
+                        ))}
+                    </div>
+                )
+            }
+        </section >
     );
 }
 

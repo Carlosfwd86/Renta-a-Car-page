@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
 import { getVehiculos, postVehiculos, patchVehiculos, deleteVehiculos } from '../../services/VehiculosService';
+import { swalOk, swalConfirmDelete } from '../../utils/swal';
 import './GestionVehiculos.css';
 
 function GestionVehiculos() {
@@ -79,7 +80,8 @@ function GestionVehiculos() {
     };
 
     const handleDelete = async (id) => {
-        if (window.confirm('¿Estás seguro de eliminar este vehículo permanentemente?')) {
+        const result = await swalConfirmDelete('este vehículo');
+        if (result.isConfirmed) {
             await deleteVehiculos(id);
             cargarVehiculos();
         }
@@ -116,7 +118,7 @@ function GestionVehiculos() {
         };
         await patchVehiculos(vActualizado, vehiculoSeleccionado.id);
         setVehiculos(prev => prev.map(v => v.id === vehiculoSeleccionado.id ? vActualizado : v));
-        alert('Información del vehículo actualizada exitosamente');
+        await swalOk('Vehículo actualizado', 'Los cambios se guardaron correctamente.');
         cerrarDetalle();
     };
 

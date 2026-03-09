@@ -3,7 +3,8 @@ import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
 import { getReservas, postReservas, patchReservas, deleteReservas } from '../../services/ReservasService';
 import { FaCalendarAlt, FaUser, FaIdCard, FaCar, FaDownload, FaTrash, FaCheckCircle, FaClock, FaEdit, FaEye, FaTimes, FaSearch } from 'react-icons/fa';
-import './GestionVehiculos.css'; // Reutilizamos los estilos de gestión
+import { swalOk, swalConfirmDelete, swalWarning } from '../../utils/swal';
+import './GestionVehiculos.css';
 
 function GestionReservas() {
     const [reservas, setReservas] = useState([]);
@@ -63,7 +64,7 @@ function GestionReservas() {
 
         if (esEdicion) {
             await patchReservas(formData, formData.id);
-            alert("Reserva actualizada correctamente.");
+            await swalOk('Reserva actualizada', 'Los cambios se guardaron correctamente.');
         } else {
             const nuevaReserva = {
                 ...formData,
@@ -71,7 +72,7 @@ function GestionReservas() {
                 fechaCreacion: new Date().toISOString()
             };
             await postReservas(nuevaReserva);
-            alert("Reserva creada manualmente.");
+            await swalOk('Reserva creada', 'La reserva ha sido registrada manualmente.');
         }
 
         setFormData(formStateInicial);
@@ -93,7 +94,8 @@ function GestionReservas() {
     };
 
     const handleDelete = async (id) => {
-        if (window.confirm('¿Estás seguro de eliminar esta reserva permanentemente?')) {
+        const result = await swalConfirmDelete('esta reserva');
+        if (result.isConfirmed) {
             await deleteReservas(id);
             cargarReservas();
         }
@@ -101,7 +103,7 @@ function GestionReservas() {
 
     const handleAceptar = async (id) => {
         await patchReservas({ estado: 'Confirmada' }, id);
-        alert("Reserva Aceptada y Confirmada.");
+        await swalOk('✅ Reserva Confirmada', 'El cliente ha sido notificado.');
         cargarReservas();
     };
 
@@ -323,7 +325,7 @@ function GestionReservas() {
                         <div className="modal-footer">
                             <button className="btn-modal btn-modal--cancel" onClick={cerrarDetalle}>Cerrar</button>
                             {reservaSeleccionada.cliente.idAdjunto && (
-                                <button className="btn-modal btn-modal--save" onClick={() => alert("Simulando descarga de: " + reservaSeleccionada.cliente.idAdjunto)}>
+                                <button className="btn-modal btn-modal--save" onClick={() => swalOk('Descarga simulada', 'Archivo: ' + reservaSeleccionada.cliente.idAdjunto)}>
                                     <FaDownload /> Descargar ID
                                 </button>
                             )}

@@ -22,7 +22,7 @@ function Header() {
 
                     <div className="header-buttons">
                         <NavLink to="/vehiculos" className="btn-primary">Ver disponibilidad</NavLink>
-                        <button className="btn-secondary">Llamar ahora</button>
+                        <NavLink to="/contacto" className="btn-primary">Llamar ahora</NavLink>
                     </div>
                 </div>
             </div>

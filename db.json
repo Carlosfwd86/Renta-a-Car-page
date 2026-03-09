@@ -18,9 +18,9 @@
       "condicion": "Óptima",
       "estadoVehiculo": "Fuera de servicio",
       "historialReservas": "2",
-      "kilometraje": "105000",
-      "valorFiscal": "4500",
-      "depreciacion": "30",
+      "kilometraje": 105000,
+      "valorFiscal": 4500,
+      "depreciacion": 30,
       "mantenimiento": [
         "Ajustes",
         "Revisión general",
@@ -328,13 +328,6 @@
       "nombre": "Cliente Ejemplo",
       "email": "cliente@example.com",
       "password": "cliente123",
-      "rol": "cliente"
-    },
-    {
-      "id": "1772998126818",
-      "nombre": "Chistofer Gonzalez",
-      "email": "cgonzalez@rentaya.com",
-      "password": "12345678",
       "rol": "cliente"
     }
   ],

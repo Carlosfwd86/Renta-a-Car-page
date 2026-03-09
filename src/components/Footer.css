@@ -1,17 +1,114 @@
-/* ===============================
-   FOOTER – Estilos
-================================ */
+/* ===================================================
+   FOOTER – Estilos Globales
+=================================================== */
 
 .footer-container {
-    background-color: hsl(209, 69%, 8%);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 24px 40px;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    color: #64748b;
-    font-size: 0.9rem;
+    background: #020617;
+    color: #ffffff;
+    padding: 80px 20px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: auto;
 }
 
-.footer-container p {
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.footer-brand h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.footer-brand h2 span {
+    color: #10b981;
+}
+
+.footer-brand p {
+    color: #94a3b8;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.footer-links h3,
+.footer-social h3 {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 15px;
+}
+
+.footer-links ul li a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #10b981;
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social-icons a {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+
+.footer-social-icons a:hover {
+    background: #10b981;
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
 }
